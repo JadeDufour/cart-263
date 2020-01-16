@@ -14,8 +14,16 @@ to match your project! Write JavaScript to do amazing things below!
 window.addEventListener('load', setup);
 
 let numPixel = 1000;
-let pixelBGcolor = 'white';
-let pixelREVERTcolor = 'blue';
+
+let pixelBGcolor = "black";
+
+let r = Math.random()*255;
+let g = Math.random()*255;
+let b = Math.random()*255;
+let pixelREVERTcolor = `rgb(${r}, ${g} ,${b} )`;
+
+
+
 let pixelDelay = 1000;
 let secondDelay = 500;
 let secondPixelcolor = "pink";
