@@ -22,7 +22,9 @@ let g = Math.random()*255;
 let b = Math.random()*255;
 let pixelREVERTcolor = `rgb(${r}, ${g} ,${b} )`;
 
+let rotation = 0;
 
+let pixelArray = [];
 
 let pixelDelay = 1000;
 let secondDelay = 500;
@@ -32,6 +34,11 @@ let secondPixelcolor = "pink";
     // Adds DIVs to the page along with event listeners that will allow
     // then to change color on mouseover.
 function setup(){
+
+
+    document.addEventListener('keydown', pageRotation);
+
+
     // A loop that runs once per pixel we need
   for (let i = 0; i < numPixel; i++) {
     // Create a DIV and store it in a variable
@@ -42,7 +49,31 @@ function setup(){
   pixel.addEventListener('mouseover', paint);
     // Add the element to the body of the page
   document.body.appendChild(pixel);
+
+  pixelArray.push(pixel);
   }
+}
+
+
+function pageRotation(e){
+//if the right arrow is pressed
+  if (e.keyCode === 39) { // Only enlarge if they pressed space
+
+  for (let i = 0; i < pixelArray.length; i++){
+     pixelArray[i].style.transform = "rotate(1deg)";
+   }
+  }
+
+//if the left arrow is pressed
+  if (e.keyCode === 37) { // Only enlarge if they pressed space
+
+    for (let i = 0; i < pixelArray.length; i++){
+       pixelArray[i].style.transform = "rotate(-1deg)";
+     }
+  }
+
+
+
 }
 
 // paint
