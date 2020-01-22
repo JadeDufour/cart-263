@@ -60,7 +60,7 @@ function pageRotation(e){
   if (e.keyCode === 39) { // Only enlarge if they pressed space
 
   for (let i = 0; i < pixelArray.length; i++){
-     pixelArray[i].style.transform = "rotate(1deg)";
+     pixelArray[i].style.transform = "rotate(7deg)";
    }
   }
 
@@ -68,7 +68,7 @@ function pageRotation(e){
   if (e.keyCode === 37) { // Only enlarge if they pressed space
 
     for (let i = 0; i < pixelArray.length; i++){
-       pixelArray[i].style.transform = "rotate(-1deg)";
+       pixelArray[i].style.transform = "rotate(-7deg)";
      }
   }
 
