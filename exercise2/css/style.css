@@ -1,0 +1,19 @@
+
+body{
+  width: 600px;
+
+  margin: 30px;
+  font-size: 20px;
+  font: 'courier';
+}
+
+.redacted{
+background-color: black;
+color: transparent;
+user-select: none;
+}
+
+.revealed{
+background-color: transparent;
+color: red;
+}
