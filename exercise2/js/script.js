@@ -16,6 +16,10 @@ $(document).ready(setup);
 let $spans;
 let probability = 0.1;
 
+// the number of secrets that can be found and how many there a total
+let foundSecrets = 0;
+let totalSecrets = 0;
+
 function setup(){
 
   // Save the selection of all spans (since we do stuff to them multiple times)

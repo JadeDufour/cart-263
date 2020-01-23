@@ -18,6 +18,10 @@ background-color: transparent;
 color: red;
 }
 
-.found{
+.foundSecrets{
   background-color: yellow;
+}
+
+.secret{
+  color: black;
 }
