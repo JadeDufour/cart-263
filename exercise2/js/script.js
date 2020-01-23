@@ -18,7 +18,7 @@ let $secretSpans = undefined;
 let probability = 0.1;
 
 // the number of secrets that can be found and how many there a total
-let foundSecrets = 0;
+let secretsFound = 0;
 let secretsTotal = undefined;
 
 function setup(){
@@ -65,5 +65,7 @@ function updateSpan(){
 }
 
 function highlightedText(){
-   $("#foundSecrets").text(foundSecrets);
+  $(this).addClass('found');
+  $(this).off('mouseover');
+  $("#foundSecrets").text(secretsFound);
 }
