@@ -67,5 +67,6 @@ function updateSpan(){
 function highlightedText(){
   $(this).addClass('found');
   $(this).off('mouseover');
+  secretsFound++;
   $("#foundSecrets").text(secretsFound);
 }
