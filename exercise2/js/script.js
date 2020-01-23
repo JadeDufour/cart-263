@@ -64,7 +64,6 @@ function updateSpan(){
   }
 }
 
-
 function highlightedText(){
   $(this).addClass('found');
   $(this).off('mouseover');
