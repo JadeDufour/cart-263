@@ -17,3 +17,7 @@ user-select: none;
 background-color: transparent;
 color: red;
 }
+
+.found{
+  background-color: yellow;
+}
