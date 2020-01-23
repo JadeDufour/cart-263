@@ -14,12 +14,12 @@ to match your project! Write JavaScript to do amazing things below!
 $(document).ready(setup);
 
 let $spans;
-let $secretSpans;
+let $secretSpans = undefined;
 let probability = 0.1;
 
 // the number of secrets that can be found and how many there a total
 let foundSecrets = 0;
-let secretsTotal = 0;
+let secretsTotal = undefined;
 
 function setup(){
 
@@ -27,6 +27,7 @@ function setup(){
   $spans = $('span');
   $spans.on('click', spanClicked);
   $secretSpans = $('.secret');
+  $secretSpans.on('mouseover',highlightedText);
   secretsTotal = $('.secret').length;
   $('#totalSecrets').text(secretsTotal);
 
@@ -61,4 +62,8 @@ function updateSpan(){
     $(this).removeClass('redacted');
     $(this).addClass('revealed');
   }
+}
+
+function highlightedText(){
+   $("#foundSecrets").text(foundSecrets);
 }
