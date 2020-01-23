@@ -14,18 +14,22 @@ to match your project! Write JavaScript to do amazing things below!
 $(document).ready(setup);
 
 let $spans;
+let $secretSpans;
 let probability = 0.1;
 
 // the number of secrets that can be found and how many there a total
 let foundSecrets = 0;
-let totalSecrets = 0;
+let secretsTotal = 0;
 
 function setup(){
 
   // Save the selection of all spans (since we do stuff to them multiple times)
   $spans = $('span');
-
   $spans.on('click', spanClicked);
+  $secretSpans = $('.secret');
+  secretsTotal = $('.secret').length;
+  $('#totalSecrets').text(secretsTotal);
+
 
   console.log('setup()');
 
