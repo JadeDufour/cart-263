@@ -13,19 +13,34 @@ box-shadow: 4px 4px solid grey;
 border-style: inset;
 }
 
-.baseBed{
+#baseBed{
   background-color: brown;
   width: 150px;
   height: 250px;
   margin-left: 30px;
   margin-top: 30px;
+  display: flex;
+}
+
+.pillows{
+  width:50px;
+  height: 50px;
+  background-color: red;
+  margin: 5px;
 }
 
 .sheets{
   background-color: yellow;
-  margin-top: 50px;
+  margin-top: -200px;
   width: 150px;
   height: 200px;
-  padding: 10px;
-  font-size: 0.9em;
+  /* padding: 10px; */
+  font-size: 1.2em;
+}
+
+#officeChair{
+  width: 100px;
+  position: relative;
+  top:100px;
+  left: 400px;
 }
