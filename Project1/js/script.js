@@ -2,10 +2,17 @@
 
 /********************************************************************
 
-Title of Project
-Author Name
+Clean your room!
+Jade Dufour
 
-This is a template. Fill in the title, author, and this description
-to match your project! Write JavaScript to do amazing things below!
+This is the story of every messy person...
 
 *********************************************************************/
+
+
+$(document).ready(setup);
+
+
+function setup(){
+
+}
