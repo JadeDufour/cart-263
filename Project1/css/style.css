@@ -12,3 +12,20 @@ margin-top: 40px;
 box-shadow: 4px 4px solid grey;
 border-style: inset;
 }
+
+.baseBed{
+  background-color: brown;
+  width: 150px;
+  height: 250px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.sheets{
+  background-color: yellow;
+  margin-top: 50px;
+  width: 150px;
+  height: 200px;
+  padding: 10px;
+  font-size: 0.9em;
+}
