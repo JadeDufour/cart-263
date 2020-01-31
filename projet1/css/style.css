@@ -1,0 +1,27 @@
+body {
+   background-color: #aaa;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   font-family: "MS Sans Serif", Arial, sans-serif;
+   height: 100%;
+   width: 100%;
+}
+
+main{
+    background-color: white;
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+}
+
+.faucet{
+
+}
+
+.mouth{
+  width:100px;
+  height:100px;
+}
