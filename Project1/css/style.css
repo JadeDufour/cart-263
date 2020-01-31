@@ -27,6 +27,7 @@ border-style: inset;
   height: 50px;
   background-color: red;
   margin: 5px;
+  top: random(30px,300px);
 }
 
 .sheets{
@@ -40,7 +41,7 @@ border-style: inset;
 
 #officeChair{
   width: 100px;
-  position: relative;
-  top:100px;
-  left: 400px;
+  position: absolute;
+  top:500px;
+  left: 700px;
 }

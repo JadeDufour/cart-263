@@ -20,6 +20,9 @@ function setup(){
   $bedSheets= $('.sheets');
   $pillow = $('.pillows');
   $chair = $('#officeChair');
+  $chair.on('mouseover',moveChair);
+
+  // $chair.draggable();
 
 
 //the bed sheets cannot be put proprely on the bed and cannot leave the room
@@ -35,14 +38,20 @@ function setup(){
     grid: [ 143, 126 ]
   });
 
+
 //The chair moves by itself
-  $chair.addEventListener('mouseover',moveChair);
+
 
 }
 
 
 
 function moveChair(){
-    $(this).animate({
-       margin: 400 });
+  $chair.animate({
+  top: '-=100px',
+  left: '-=100px'
+
+
+  });
+
 }
