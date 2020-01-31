@@ -29,5 +29,20 @@ $tBrush.draggable({
   grid: [ 43, 26 ]
 });
 
+$('#introDialog').dialog({
+    buttons:{
+      "Yes I am!": yes,
+      "No" : no
+    }
+  });
+
+
 
 }
+
+
+function yes(){
+
+}
+
+function no(){}
