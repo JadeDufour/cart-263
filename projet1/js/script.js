@@ -13,6 +13,7 @@ to match your project! Write JavaScript to do amazing things below!
 
 let $water;
 let $tBrush;
+let $theTeeth;
 
 $(document).ready(setup);
 
@@ -20,6 +21,13 @@ function setup(){
 
 $water= $('.faucet');
 $tBrush= $('.toothbrush');
+$theTeeth = $('.teeth');
+
+
+$('body').css({
+   cursor: 'url(assets/images/toothbrush2.png), auto'
+ });
+
 
 //ill do something else while im trying to figure out the cursor thing
 
@@ -62,6 +70,10 @@ function()  //on out
   $(this).attr('src','assets/images/waterFaucet.gif');
 })
 
+
+$theTeeth.animate({
+  backgroundColor: '#F3E033'
+}, 10000);
 
 }
 
