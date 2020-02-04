@@ -10,53 +10,48 @@ to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
 
-
+//We create a shortcut for the water faucet clip and
 let $water;
-let $tBrush;
+let boringSFX;
 
 // let animationTime = Math.random()*(10000);
 
 $(document).ready(setup);
 
 function setup(){
-
+boringSFX = new Audio('assets/sounds/elevatorMusic.wav');
 $water= $('.faucet');
-$tBrush= $('.toothbrush');
 
-
-
+// the cursor is set to be a toothbrush
 $('body').css({
    cursor: 'url(assets/images/toothbrush2.png), auto'
  });
 
 
-
-
-//the into dialog box
+//the into dialog box, which serves no purpose
 $('#introDialog').dialog({
     buttons:{
-      "Yes I am!": yes,
-      "No" : no
+      "Like no one ever was": one,
+      "To catch them is my real test" : two,
+      "To train them is my cause" : tree
     }
   });
 
 //when the toothbrush hovers the faucets, the water stops and the sound too
-// $('.faucet').hover(function(){
-//   $(this).attr('src','assets/images/source.png'), function(){
-//     $(this).removeAttribute('src','assets/images/source.png')
-//   }
-// });
-
 $water.hover(function(event,ui) //on hover
 {
    $(this).attr('src','assets/images/source.png');
 },
-function()  //on out
+function()                      //on out
 {
   $(this).attr('src','assets/images/waterFaucet.gif');
 })
 
 
+//------------------------------------------------------------------------------
+//**Not final
+//The teeth turn yellow with different delays with .animate
+//
 $('#teeth1 , #teeth3  , #teeth4').animate({
   backgroundColor: '#F3E033'
 }, 10000);
@@ -69,10 +64,48 @@ $(' #teeth8 , #teeth5').animate({
   backgroundColor: '#F3E033'
 }, 30000);
 
+
+//the point would be to make them go back to white when the mouse hovers them
+
+
+$('#teeth1, #teeth2, #teeth3 , #teeth4 ,#teeth5, #teeth6, #teeth7,#teeth8').mouseenter(function () {
+
+  $('#teeth1, #teeth2, #teeth3 , #teeth4 ,#teeth5, #teeth6, #teeth7,#teeth8').animate({
+    backgroundColor: 'white'
+  }, 2000);
+
+
+
+
+//some code i found online
+      // var roll = null;
+      // var that = $(this);
+      //
+      //
+      //   if (that==="#trigger1"){roll = "$('#roll1r')";}
+      //   else if(that==="#trigger2"){roll ="$('#roll2r')";}
+      //   else if(that==="#trigger3"){roll = "$('#roll3r')";}
+      //   console.log(roll);
+      //   roll.fadeOut({
+      //       duration:300,
+      //      // fail: that.hide()
+      //   });
+    });
+//------------------------------------------------------------------------------
+
 }
 
 
 
-function yes(){}
+function one(){
+  $(this).parent().effect('shake');
+}
 
-function no(){}
+function two(){
+  boringSFX.play();
+
+}
+
+function tree(){
+  $(this).parent().effect('puff');
+}
