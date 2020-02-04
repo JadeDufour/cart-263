@@ -2,7 +2,7 @@
 
 /********************************************************************
 
-Title of Project
+Epic dentistry
 Author Name
 
 This is a template. Fill in the title, author, and this description
@@ -13,7 +13,8 @@ to match your project! Write JavaScript to do amazing things below!
 
 let $water;
 let $tBrush;
-let $theTeeth;
+
+// let animationTime = Math.random()*(10000);
 
 $(document).ready(setup);
 
@@ -21,7 +22,7 @@ function setup(){
 
 $water= $('.faucet');
 $tBrush= $('.toothbrush');
-$theTeeth = $('.teeth');
+
 
 
 $('body').css({
@@ -29,22 +30,7 @@ $('body').css({
  });
 
 
-//ill do something else while im trying to figure out the cursor thing
 
-// // $('selector').css('cursor', 'url("/assets/images/toothbrush1.png"), auto');
-// $('selector').css({'cursor': url('assets/images/toothbrush.png'), default});
-//
-// // $('selector').css({
-// //     cursor: 'url(assets/images/toothbrush1.png), default'});
-//
-//  // $('body').css('cursor', 'url(assets/images/toothbrush1.png),auto');
-// // $(".body").css('cursor','url(assets/images/toothbrush1.png),auto');
-//we can drag the toothbrush from left to right
-// $tBrush.draggable({
-//   containment: "parent",
-//   axis: 'x',
-//   grid: [ 43, 26 ]
-// });
 
 //the into dialog box
 $('#introDialog').dialog({
@@ -71,11 +57,20 @@ function()  //on out
 })
 
 
-$theTeeth.animate({
+$('#teeth1 , #teeth3  , #teeth4').animate({
   backgroundColor: '#F3E033'
 }, 10000);
 
+$('#teeth2 , #teeth6  , #teeth7').animate({
+  backgroundColor: '#F3E033'
+}, 18000);
+
+$(' #teeth8 , #teeth5').animate({
+  backgroundColor: '#F3E033'
+}, 30000);
+
 }
+
 
 
 function yes(){}
