@@ -26,8 +26,20 @@ height: 200px;
 
 .mouth{
   background-color: pink;
-  width:100px;
-  height:100px;
+  width:600px;
+  height:350px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  padding-top:35px;
+  border-radius: 15px;
+}
+
+.teeth{
+background-color: white;
+width: 144px;
+height: 130px
 
 }
 
@@ -35,3 +47,6 @@ height: 200px;
   width: 20%;
   height: 50%;
 }
+/* .custom {
+  cursor: url('assets/images/toothbrush.png'), auto;
+} */
