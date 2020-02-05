@@ -37,6 +37,9 @@ $('#introDialog').dialog({
     }
   });
 
+
+
+
 //when the toothbrush hovers the faucets, the water stops and the sound too
 $water.hover(function(event,ui) //on hover
 {
@@ -46,6 +49,10 @@ function()                      //on out
 {
   $(this).attr('src','assets/images/waterFaucet.gif');
 })
+
+
+
+
 
 
 //------------------------------------------------------------------------------

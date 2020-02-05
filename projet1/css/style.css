@@ -1,16 +1,19 @@
 body {
    background-color: #aaa;
-   /* background:url("projet1/assets/images/background.jpeg"); */
+   /* background-image: : url("/images/img.jpeg"); */
    margin: 0;
    padding: 0;
    overflow: hidden;
-   font-family: "MS Sans Serif", Arial, sans-serif;
+   font-family: 'impact';
    height: 100%;
    width: 100%;
 }
 
 main{
     background-color: white;
+    border-style: inset;
+    border: 10px 10px grey;
+    border-radius: 10px;
     width: 1200px;
     height: 600px;
     margin: auto;
@@ -18,11 +21,12 @@ main{
     display: flex;
     justify-content: space-around;
     padding-top: 75px;
+
 }
 
 .faucet{
-width: 300px;
-height: 200px;
+width: 400px;
+height: 300px;
 }
 
 .mouth{
