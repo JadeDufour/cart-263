@@ -1,9 +1,11 @@
 body {
    background: url("../assets/images/background.jpeg");
+   background-repeat: no-repeat;
+   background-size: cover;
    margin: 0;
    padding: 0;
    overflow: hidden;
-   font-family: 'impact';
+   font-family: 'courrier';
    height: 100%;
    width: 100%;
 }
@@ -20,7 +22,7 @@ main{
     display: flex;
     justify-content: space-around;
     padding-top: 75px;
-
+    font-size: 2em;
 }
 
 .faucet{
@@ -56,6 +58,15 @@ height: 130px
   width: 20%;
   height: 50%;
 }
-/* .custom {
-  cursor: url('assets/images/toothbrush.png'), auto;
-} */
+
+.textDiv{
+  background-color: blue;
+  text-align: center;
+  padding-top: 50px;
+  height: 100px;
+  width: 300px;
+  top: 500px;
+  left: 300px;
+  position: fixed;
+  /* right: : 150px; */
+}
