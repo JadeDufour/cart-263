@@ -1,6 +1,5 @@
 body {
-   background-color: #aaa;
-   /* background-image: : url("/images/img.jpeg"); */
+   background: url("../assets/images/background.jpeg");
    margin: 0;
    padding: 0;
    overflow: hidden;
