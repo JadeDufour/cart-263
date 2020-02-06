@@ -86,7 +86,7 @@ function setup() {
   //When the mouse leaves the tooth div , it goes back to being disgusting
   $('.teeth').on('mouseleave', goYellow);
 }
-//the function for the teeth to go yellow at random speed
+//the function for the teeth to go yellow at random s
 function goYellow() {
   $(this).animate({
     backgroundColor: '#F3E033'
@@ -121,3 +121,6 @@ function mad() {
 function close() {
   $(this).parent().effect('fold');
 }
+
+//a popup message to tell the instructions
+alert("\nDay 942 492\n\nWelcome, Sisyphus\nMake those teeth shine ");
