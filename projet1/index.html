@@ -1,75 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- CSS stylesheet(s) -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- Library script(s) -->
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <!-- Library script(s) -->
   <!-- Add your required libraries here either as local files or CDN-hosted files -->
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"
-  ></script>
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-  />
-  <script
-    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
   <!-- My script(s) -->
   <script src="js/script.js"></script>
 
+  <!-- Google font I used for the 2 text divs  -->
   <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700&display=swap" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
-<main>
+<body>
+  <main>
 
+    <!--The water running Gif, changes to a still image when the mouse goes over it  -->
+    <img class="faucet" src="assets/images/waterFaucet.gif" alt="water running"></img>
 
-<img class="faucet" src="assets/images/waterFaucet.gif" alt="water running"></img>
-<div class="custom">
+    <!-- The div that contains the 8 teeth that go yellow over time -->
+    <div class="mouth">
+      <div id="teeth1" class="teeth"></div>
+      <div id="teeth2" class="teeth"></div>
+      <div id="teeth3" class="teeth"></div>
+      <div id="teeth4" class="teeth"></div>
+      <div id="teeth5" class="teeth"></div>
+      <div id="teeth6" class="teeth"></div>
+      <div id="teeth7" class="teeth"></div>
+      <div id="teeth8" class="teeth"></div>
+    </div>
 
-</div>
+    <!-- a pokemon themed dialog box that has no use whatsoever, I just liked the idea of it being there -->
+    <div id="introDialog" title="You wanna ">
+      <p> be the very best?</p>
+    </div>
+    </div>
 
-<div class="mouth">
-  <div id="teeth1" class="teeth"></div>
-  <div id="teeth2" class="teeth"></div>
-  <div id="teeth3" class="teeth"></div>
-  <div id="teeth4" class="teeth"></div>
-  <div id="teeth5" class="teeth"></div>
-  <div id="teeth6" class="teeth"></div>
-  <div id="teeth7" class="teeth"></div>
-  <div id="teeth8" class="teeth"></div>
+    <!-- The two text divs, one is for the name of the cabinet, the other is the slogan. -->
+    <!-- both containing an icon I found on https://www.flaticon.com/authors/monkik -->
+    <div class="textDiv">Sisyphus' Ratchet Dentist Cabinet <img src="assets/images/zeus1.png" alt="a lil icon of zeus"></img>
+    </div>
+    <div class="textDiv2">"Cleaning your disgusting teeth for eternity..." <br> <img class="laurel" src="assets/images/laurel.png" alt="a laurel crown"></img> </div>
 
-</div>
-
-
-<div id="introDialog" title="You wanna ">
-  <p> be the very best?</p>
-</div>
-
-</div>
-
-
-<div class="textDiv" >Sisyphus' Ratchet Dentist Cabinet <img src="assets/images/zeus1.png" alt="a lil icon of zeus"></img>
- </div>
-<div class="textDiv2" >"Cleaning your disgusting teeth for eternity..." <br> <img class="laurel" src="assets/images/laurel.png" alt="a laurel crown"></img> </div>
-
-</main>
-
-
-  </body>
+  </main>
+</body>
 
 </html>
 
