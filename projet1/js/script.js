@@ -6,8 +6,9 @@
 Epic dentistry
 Jade Dufour
 
-This is a template. Fill in the title, author, and this description
-to match your project! Write JavaScript to do amazing things below!
+Welcome to Sysiphus' dentist cabinet!
+
+
 
 *********************************************************************/
 
@@ -15,18 +16,20 @@ to match your project! Write JavaScript to do amazing things below!
 let $water;
 let boringSFX;
 
-// let animationTime = Math.random()*(10000);
 
 $(document).ready(setup);
 
 function setup() {
   boringSFX = new Audio('assets/sounds/elevatorMusic.wav');
+
   $water = $('.faucet');
 
   // the cursor is set to be a toothbrush
   $('body').css({
     cursor: 'url(assets/images/toothbrush2.png), auto'
   });
+
+
 
 
   //the into dialog box, which serves no purpose
@@ -50,28 +53,12 @@ function setup() {
 
 
   //------------------------------------------------------------------------------
-  //**Not final
-  //The teeth turn yellow with different delays with .animate
-  //
+
+  //the teeth go back to white when the mouse hovers them
+  //and then back the yellow (it's an infinite spiral of disgusting teeth cleaning)
+
 
   $('.teeth').each(goYellow);
-
-
-  //
-  // $('#teeth1 , #teeth3  , #teeth4').animate({
-  //   backgroundColor: '#F3E033'
-  // }, 10000);
-  //
-  // $('#teeth2 , #teeth6  , #teeth7').animate({
-  //   backgroundColor: '#F3E033'
-  // }, 18000);
-  //
-  // $(' #teeth8 , #teeth5').animate({
-  //   backgroundColor: '#F3E033'
-  // }, 30000);
-
-
-  //the point would be to make them go back to white when the mouse hovers them
 
 
   $('.teeth').mouseenter(function() {
@@ -83,17 +70,17 @@ function setup() {
 
   $('.teeth').on('mouseleave', goYellow);
 
-  //------------------------------------------------------------------------------
-
 }
-
 
 function goYellow() {
   $(this).animate({
     backgroundColor: '#F3E033'
-  }, 1000 + Math.random() * 5000);
-}
+  }, 1000 + Math.random() * 5500);
 
+
+  //------------------------------------------------------------------------------
+
+}
 
 
 function one() {
