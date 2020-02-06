@@ -43,18 +43,8 @@ function setup() {
   });
 
 
-  //the pokemon intro dialog box, which serves no purpose
+  //the reminder dialog box
   $('#dialogAnger').dialog({
-    position: ["left", "top"],
-    buttons: {
-      "Tell them to go push a boulder up a hill": mad,
-      "Accept your tragic fate": close
-    },
-    appendTo: "body",
-  });
-
-  // a reminder dialog box positionned at the top left of the screen
-  $('#dialogAnger2').dialog({
     position: ["left", "top"],
     buttons: {
       "Tell them to go push a boulder up a hill": mad,
@@ -96,7 +86,7 @@ function setup() {
   //When the mouse leaves the tooth div , it goes back to being disgusting
   $('.teeth').on('mouseleave', goYellow);
 }
-//the function for the teeth to go yellow
+//the function for the teeth to go yellow at random speed
 function goYellow() {
   $(this).animate({
     backgroundColor: '#F3E033'
@@ -105,7 +95,7 @@ function goYellow() {
 
 //------------------------------------------------------------------------------
 
-// 3 functions I used for the dialgue box
+// functions I used for the dialgue boxes
 // each show off my supreme skills at coding
 
 //this one is a rip off of MSN's 'Wizz'
@@ -127,7 +117,7 @@ function mad() {
     color: 'red'
   }, 900);
 }
-//this one make the dialogue disapear (fold)
+//this one makes the dialogue disapear (fold)
 function close() {
   $(this).parent().effect('fold');
 }
