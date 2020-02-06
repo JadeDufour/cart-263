@@ -13,16 +13,18 @@ anti-bad breath propaganda, maybe it's Maybeline... you find out
 
 *********************************************************************/
 
-//We create a shortcut for the water faucet clip and
+//We create a shortcut for the water faucet clip
 let $water;
-// The shortcut for the sfx coming out of the dialog box
+// The shortcut for the sfx coming out of the dialog box and the faucet
 let boringSFX;
+let faucetSFX;
 
 
 $(document).ready(setup);
 
 function setup() {
   boringSFX = new Audio('assets/sounds/elevatorMusic.wav');
+  faucetSFX = new Audio('assets/sounds/faucetSFX.wav');
   $water = $('.faucet');
 
   // the cursor is set to be a toothbrush, so you can clean the teeth
@@ -31,26 +33,52 @@ function setup() {
   });
 
 
-  //the pokemon intro dialog box, which serves no purpose
+  //the pokemon intro dialog box, which serves no purpose but to play music
   $('#introDialog').dialog({
     buttons: {
-      "Like no one ever was": one,
-      "To catch them is my real test": two,
-      "To train them is my cause": tree
+      "Like no one ever was": wizz,
+      "To catch them is my real test": music,
+      "To train them is my cause": disapear
     }
   });
+
+
+  //the pokemon intro dialog box, which serves no purpose
+  $('#dialogAnger').dialog({
+    position: ["left", "top"],
+    buttons: {
+      "Tell them to go push a boulder up a hill": mad,
+      "Accept your tragic fate": close
+    },
+    appendTo: "body",
+  });
+
+  // a reminder dialog box positionned at the top left of the screen
+  $('#dialogAnger2').dialog({
+    position: ["left", "top"],
+    buttons: {
+      "Tell them to go push a boulder up a hill": mad,
+      "Accept your tragic fate": close
+    },
+  });
+
+
+//the water SFX plays unless the player hovers the mouse over the gif
+faucetSFX.play();
 
   //when the toothbrush hovers the faucets, the water stops and the sound too
   $water.hover(function(event, ui) //on hover
     {
       $(this).attr('src', 'assets/images/source.png');
+      //the water sfx stops
+      faucetSFX.pause();
     },
     function() //on out
     { //We add the still image attribute so it looks like the water stops running
       $(this).attr('src', 'assets/images/waterFaucet.gif');
+      //the water sfx resumes
+      faucetSFX.play();
     })
-
-
   //------------------------------------------------------------------------------
 
   //the teeth go back to white when the mouse hovers them
@@ -81,14 +109,25 @@ function goYellow() {
 // each show off my supreme skills at coding
 
 //this one is a rip off of MSN's 'Wizz'
-function one() {
+function wizz() {
   $(this).parent().effect('shake');
 }
 //this one plays music
-function two() {
+function music() {
   boringSFX.play();
 }
-//this one make the dialogue disapear to an other dimension
-function tree() {
+//this one sends the dialogue to an other dimension
+function disapear() {
   $(this).parent().effect('puff');
+}
+//this one makes the dialogue bounce and go red ( to represent anger) with a slight delay
+function mad(){
+  $(this).parent().effect('bounce');
+  $(this).parent().effect("highlight", {
+    color: 'red'
+  }, 900);
+}
+//this one make the dialogue disapear (fold)
+function close(){
+  $(this).parent().effect('fold');
 }

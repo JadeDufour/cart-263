@@ -1,5 +1,5 @@
 body {
-   background: url("../assets/images/background.jpeg");
+   background: url("../assets/images/dentist.jpg");
    background-repeat: no-repeat;
    background-size: cover;
    margin: 0;
@@ -30,6 +30,8 @@ main{
 width: 400px;
 height: 300px;
 }
+
+
 
 .mouth{
   background-color: pink;
