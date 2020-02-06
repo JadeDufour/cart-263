@@ -63,8 +63,8 @@ function setup() {
   });
 
 
-//the water SFX plays unless the player hovers the mouse over the gif
-faucetSFX.play();
+  //the water SFX plays unless the player hovers the mouse over the gif
+  faucetSFX.play();
 
   //when the toothbrush hovers the faucets, the water stops and the sound too
   $water.hover(function(event, ui) //on hover
@@ -121,13 +121,13 @@ function disapear() {
   $(this).parent().effect('puff');
 }
 //this one makes the dialogue bounce and go red ( to represent anger) with a slight delay
-function mad(){
+function mad() {
   $(this).parent().effect('bounce');
   $(this).parent().effect("highlight", {
     color: 'red'
   }, 900);
 }
 //this one make the dialogue disapear (fold)
-function close(){
+function close() {
   $(this).parent().effect('fold');
 }
