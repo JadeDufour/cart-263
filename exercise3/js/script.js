@@ -174,6 +174,27 @@ $(document).ready(setup);
 // We just start a new round right away!
 function setup() {
   newRound();
+
+
+  if (annyang) {
+    console.log('it works');
+  // Let's define our first command. First the text we expect, and then the function it should call
+var commands = {
+    'I give up': function() {
+        $correctButton.effect('highlight');
+        console.log('jjj');
+    }
+
+  };
+
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
+
 }
 
 // newRound()
@@ -261,6 +282,11 @@ function handleGuess() {
     // Start a new round
     setTimeout(newRound, 1000);
   }
+
+
+
+
+
   else {
     // Otherwise they were wrong, so shake the clicked button
     $(this).effect('shake');
