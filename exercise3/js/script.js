@@ -181,7 +181,16 @@ function setup() {
 
   // Let's define our first command. First the text we expect, and then the function it should call
 var commands = {
-    'I give up': giveUp
+  //the player guesses the animal, if then the games handles the guess 
+   "I think it is *animal": handleGuess,
+  //i give up = a new round starts
+    'I give up': giveUp,
+  //Say it again = a hint ( the voice repeats)
+    'Say it again': function () {
+       sayBackwards($correctButton.text()
+     );
+   }
+
 
   };
 
@@ -197,16 +206,26 @@ var commands = {
 
 function giveUp(){
   $correctButton.effect({
-    effect: "highlight",
+    effect: "highlight" ,
+    //the button highlights turquoise
+    color: "#33FF99",
     complete: function () { setTimeout(function () {
       //the score goes back to 0
        scoreCount(0);
-       //the game starts a new round
-       newRound();
+      //the game starts a new round
+       setTimeout(newRound, 3000);
        //with a delay of 300 ms
-     },300);},
+     },800);},
   }
   );
+  let usVoiceOptions = {
+    pitch: 1,
+    rate: 0.9
+  }
+  //the voice gives the correct answer
+  responsiveVoice.speak('The answer was' + $correctButton.text()+'.' +'Your score was' + score, 'US English Female', usVoiceOptions, 2000);
+
+
 }
 
 // newRound()
@@ -296,7 +315,7 @@ function handleGuess() {
     // Remove all the buttons
     $('.guess').remove();
     // Start a new round
-    setTimeout(newRound, 1000);
+    setTimeout(newRound, 3000);
 
   }
 
