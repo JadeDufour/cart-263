@@ -159,6 +159,7 @@ let animals = [
   "zebra"
 ];
 
+let score = 0;
 // We need to track the correct button for each round
 let $correctButton;
 // We also track the set of buttons
@@ -177,13 +178,10 @@ function setup() {
 
 
   if (annyang) {
-    console.log('it works');
+
   // Let's define our first command. First the text we expect, and then the function it should call
 var commands = {
-    'I give up': function() {
-        $correctButton.effect('highlight');
-        console.log('jjj');
-    }
+    'I give up': giveUp
 
   };
 
@@ -197,6 +195,20 @@ var commands = {
 
 }
 
+function giveUp(){
+  $correctButton.effect({
+    effect: "highlight",
+    complete: function () { setTimeout(function () {
+      //the score goes back to 0
+       scoreCount(0);
+       //the game starts a new round
+       newRound();
+       //with a delay of 300 ms
+     },300);},
+  }
+  );
+}
+
 // newRound()
 //
 // Generates a set of possible answers randomly from the set of animals
@@ -204,6 +216,8 @@ var commands = {
 function newRound() {
   // We empty the buttons array for the new round
   buttons = [];
+  //gotta remove the old guesses
+  $(".guess").remove();
   // Loop for each option we'll offter
   for (let i = 0; i < NUM_OPTIONS; i++) {
     // Choose the answer text randomly from the animals array
@@ -277,10 +291,13 @@ function handleGuess() {
   // If the button they clicked on has the same label as
   // the correct button, it must be the right answer...
   if ($(this).text() === $correctButton.text()) {
+    //Adds +1 to the score if the guess is right
+    scoreCount(score +1);
     // Remove all the buttons
     $('.guess').remove();
     // Start a new round
     setTimeout(newRound, 1000);
+
   }
 
 
@@ -292,6 +309,8 @@ function handleGuess() {
     $(this).effect('shake');
     // And say the correct animal again to "help" them
     sayBackwards($correctButton.text());
+    //Resets the score to 0 if the guess if wring
+    scoreCount(0);
   }
 }
 
@@ -301,4 +320,10 @@ function handleGuess() {
 function getRandomElement(array) {
   let element = array[Math.floor(Math.random() * array.length)];
   return element;
+}
+
+function scoreCount(newScore){
+  //Updates the score depending on the guess (right or wrong)
+ score = newScore;
+ $(".score").text(score);
 }
