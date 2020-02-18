@@ -176,13 +176,12 @@ $(document).ready(setup);
 function setup() {
   newRound();
 
-
   if (annyang) {
 
   // Let's define our first command. First the text we expect, and then the function it should call
 var commands = {
-  //the player guesses the animal, if then the games handles the guess 
-   "I think it is *animal": handleGuess,
+  //the player guesses the animal, if then the games handles the guess
+   "I think it is *animalGuess": handleVoiceGuess,
   //i give up = a new round starts
     'I give up': giveUp,
   //Say it again = a hint ( the voice repeats)
@@ -190,10 +189,7 @@ var commands = {
        sayBackwards($correctButton.text()
      );
    }
-
-
   };
-
 
   // Add our commands to annyang
   annyang.addCommands(commands);
@@ -201,7 +197,25 @@ var commands = {
   // Start listening. You can call this here, or attach this call to an event, button, etc.
   annyang.start();
 }
+}
 
+function handleVoiceGuess(animalGuess) {
+  // linking the variables
+  if (animalGuess === $correctButton.text()) {
+    // updating the score()
+    scoreCount(score +1);
+    // removes the buttons
+    $('.guess').remove();
+    // time delay
+    setTimeout(newRound, 1000);
+
+  } else {
+    // shake event
+    $('.guess').effect('shake');
+
+    // says answer backwards
+    sayBackwards($correctButton.text());
+  }
 }
 
 function giveUp(){
@@ -226,6 +240,29 @@ function giveUp(){
   responsiveVoice.speak('The answer was' + $correctButton.text()+'.' +'Your score was' + score, 'US English Female', usVoiceOptions, 2000);
 
 
+}
+
+function handleGuess() {
+  // If the button they clicked on has the same label as
+  // the correct button, it must be the right answer...
+  if ($(this).text() === $correctButton.text()) {
+    //Adds +1 to the score if the guess is right
+    scoreCount(score +1);
+    // Remove all the buttons
+    $('.guess').remove();
+    // Start a new round
+    setTimeout(newRound, 3000);
+
+  }
+
+  else {
+    // Otherwise they were wrong, so shake the clicked button
+    $(this).effect('shake');
+    // And say the correct animal again to "help" them
+    sayBackwards($correctButton.text());
+    //Resets the score to 0 if the guess if wring
+    scoreCount(0);
+  }
 }
 
 // newRound()
@@ -318,10 +355,6 @@ function handleGuess() {
     setTimeout(newRound, 3000);
 
   }
-
-
-
-
 
   else {
     // Otherwise they were wrong, so shake the clicked button
