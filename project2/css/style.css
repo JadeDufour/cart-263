@@ -6,7 +6,40 @@ background-color: '#C0C0C0';
 main{
   background-color: #66B2FF;
   width:1200px;
-  height: 600px;
+  height: 700px;
   margin:auto;
   margin-top: 100px;
 }
+
+.choicesBox{
+  margin:auto;
+  padding-top: 150px;
+  background-color: white;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.left{
+  background-color: yellow;
+  width: 250px;
+  height: 250px;
+
+}
+
+.right{
+  background-color: yellow;
+  width: 250px;
+  height: 250px;
+}
+
+
+/*
+h1, p {
+	font-family: sans-serif;
+	text-align: center;
+	color: #323330;
+	font-size:  100px;
+} */

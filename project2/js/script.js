@@ -10,9 +10,13 @@ to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
 
+
+
+
 $(document).ready(setup);
 
 
-function setup() {
+
+function setup(){
 
 }
