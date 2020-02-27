@@ -35,16 +35,16 @@ let clickbait = [
 
 //an array of actual thumbnails that kidsfriendly
 let friendly = [
-  "../assets/images/yes.jpg",
-  "../assets/images/yes2.jpg",
-  "../assets/images/yes3.jpg",
-  "../assets/images/yes4.jpg",
-  "../assets/images/yes5.jpg",
-  "../assets/images/yes6.jpg",
-  "../assets/images/yes8.jpg",
-  "../assets/images/yes9.jpg",
-  "../assets/images/yes10.jpg",
-  "../assets/images/yes11.jpg",
+  "yes1.jpg",
+  "yes2.jpg",
+  "yes3.jpg",
+  "yes4.jpg",
+  "yes5.jpg",
+  "yes6.jpg",
+  "yes8.jpg",
+  "yes9.jpg",
+  "yes10.jpg",
+  "yes11.jpg"
 ]
 
 
@@ -53,8 +53,8 @@ $(document).ready(setup);
 
 
 function setup(){
-  $leftChoice = $('.left');
-  $rightChoice = $('.right');
+  $leftChoice = $('#left');
+  $rightChoice = $('#right');
   //for a new round to begin
   newRound();
 }
@@ -65,13 +65,13 @@ function newRound(){
   let r = Math.random();
 
   if (r > 0.5){
-    $leftChoice.attr('src','assets/images/' + clickbait[Math.floor(Math.random() * clickbait.length)]);
-    $rightChoice.attr('src','assets/images/' + friendly[Math.floor(Math.random() * friendly.length)]);
+    $leftChoice.attr('src','assets/images/notok/' + clickbait[Math.floor(Math.random() * clickbait.length)]);
+    $rightChoice.attr('src','assets/images/ok/' + friendly[Math.floor(Math.random() * friendly.length)]);
   }
 
   else {
-    $leftChoice.attr('src','assets/images/' + friendly[Math.floor(Math.random() * friendly.length)]);
-    $rightChoice.attr('src','assets/images/' + clickbait[Math.floor(Math.random() * clickbait.length)]);
+    $leftChoice.attr('src','assets/images/ok/' + friendly[Math.floor(Math.random() * friendly.length)]);
+    $rightChoice.attr('src','assets/images/notok/' + clickbait[Math.floor(Math.random() * clickbait.length)]);
   }
 
   //checkAnswer();
