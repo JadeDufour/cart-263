@@ -96,3 +96,11 @@ function checkAnswer(){
     sayBackwards($correctButton.text());
   }
 }
+
+
+$( function() {
+    $( "#bar" ).progressbar({
+      background: 'green',
+      value: 80
+    });
+  } );
