@@ -11,33 +11,94 @@ to match your project! Write JavaScript to do amazing things below!
 **Every 'friendly' thumbnails come from verified (certified) youtube channels (Nick Jr, Peppa Pig Official, Little Angel, Masha ans The Bear, Toddler Fun Learning, DC SuperHero Girls)**
 
 *********************************************************************/
-
-
-let $initialPage;
-let $mainPage;
-
-
-
-
 $(document).ready(setup);
+// will add a initial page (intro) later
+// let $initialPage;
+// let $mainPage;
 
 function setup(){
-  $initialPage = $("#initial");
-  $mainPage = $("#main");
-  // The sign in page reappear
-$initialPage.css('display','block');
-  $('#signButton').on('click',signIn);
 
+
+  if (annyang) {
+
+// Let's define our first command. First the text we expect, and then the function it should call
+var commands = {
+//the player guesses the animal, if then the games handles the guess
+ "random": result,
+
+// //i give up = a new round starts
+//   'I give up': giveUp,
+// //Say it again = a hint ( the voice repeats)
+//   'Say it again': function () {
+//      sayBackwards($correctButton.text()
+//    );
+//  }
+};
+
+// Add our commands to annyang
+annyang.addCommands(commands);
+
+// Start listening. You can call this here, or attach this call to an event, button, etc.
+annyang.start();
+}
+}
+var customName = document.getElementById('customName');
+var randomize = document.querySelector('.randomize');
+var story = document.querySelector('.story');
+
+
+function randomValueFromArray(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
+var storyText =
+  "It was 94 farenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but he was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 
-//=======================Sing In Page===============================//
-function signIn() {
-  // The sign in page (current) disappears
-  $initialPage.css('display','none');
-  // The computer desktop page appears
-  $mainPage.css('display','block');
+var insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
+
+var insertY = ["the soup kitchen", "Disneyland", "the White House"];
+
+var insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
+
+
+
+
+function result() {
+  var newStory = storyText;
+  var xItem = randomValueFromArray(insertX);
+  var yItem = randomValueFromArray(insertY);
+  var zItem = randomValueFromArray(insertZ);
+
+  var newStory = newStory.replace(':insertx:', xItem);
+  var newStory = newStory.replace(':insertx:', xItem);
+  var newStory = newStory.replace(':inserty:', yItem);
+  var newStory = newStory.replace(':insertz:', zItem);
+
+  if (customName.value == "") {
+    var name = customName.value;
+    newStory = newStory.replace('Bob', name);
+
+  }
+
+  story.textContent = newStory;
+  story.style.visibility = 'visible';
 }
+
+  //LATER
+//   $initialPage = $("#initial");
+//   $mainPage = $("#main");
+//   // The sign in page reappear
+// $initialPage.css('display','block');
+//   $('#signButton').on('click',signIn);
+
+
+
+
+//=======================Sing In Page===============================// WILL ADD LATER
+// function signIn() {
+//   $initialPage.css('display','none');
+//   $mainPage.css('display','block');
+// }
 
 
 
