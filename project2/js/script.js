@@ -13,16 +13,31 @@ to match your project! Write JavaScript to do amazing things below!
 *********************************************************************/
 
 
-let state = "StartScreen";
+let $initialPage;
+let $mainPage;
 
 
 
 
 $(document).ready(setup);
 
+function setup(){
+  $initialPage = $("#initial");
+  $mainPage = $("#main");
+  // The sign in page reappear
+$initialPage.css('display','block');
+  $('#signButton').on('click',signIn);
+
+}
 
 
-
+//=======================Sing In Page===============================//
+function signIn() {
+  // The sign in page (current) disappears
+  $initialPage.css('display','none');
+  // The computer desktop page appears
+  $mainPage.css('display','block');
+}
 
 
 
